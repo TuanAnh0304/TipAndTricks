@@ -24,5 +24,6 @@ namespace TatBlog.Data.Contexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CategoryMap).Assembly);
         }
+
     }
 }

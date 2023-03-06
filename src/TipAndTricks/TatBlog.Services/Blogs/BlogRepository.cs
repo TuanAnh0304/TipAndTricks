@@ -10,7 +10,6 @@ using TatBlog.Data.Contexts;
 using TatBlog.Core.Contracts;
 using TatBlog.Services.Extentions;
 
-
 namespace TatBlog.Services.Blogs
 {
     public class BlogRepository : IBlogRepository
@@ -74,8 +73,9 @@ namespace TatBlog.Services.Blogs
                 .ExecuteUpdateAsync(p => p.SetProperty(x => x.ViewCount, x => x.ViewCount + 1),
                 cancellationToken);
         }
-        public async Task<IList<CategoryItem>> GetCategoriesAsync(
-            bool showOnMenu = false, CancellationToken cancellationToken = default)
+        public async Task<IList<CategoryItem>> GetCategoryItemsAsync(
+            bool showOnMenu = false,
+            CancellationToken cancellationToken = default)
         {
             IQueryable<Category> categories = _context.Set<Category>();
             if (showOnMenu)
@@ -121,7 +121,5 @@ namespace TatBlog.Services.Blogs
 
             return await tagQuery.FirstOrDefaultAsync(cancellationToken);
         }
-
-        
     }
 }
