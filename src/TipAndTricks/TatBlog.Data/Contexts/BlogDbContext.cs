@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -15,15 +16,17 @@ namespace TatBlog.Data.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Tag> Tags { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=CHOAA\SQLEXPRESS;Database=TatBlog;Trusted_Connection=True;MultipleActiveResultSets=rue;Encrypt=False");
+            optionsBuilder.UseSqlServer(@"Server=CHOAA\SQLEXPRESS;Database=Tatblog;Trusted_Connection=True;MultipleActiveResultSets=True;Encrypt=False");
 
         }
+        public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options)
+        { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CategoryMap).Assembly);
         }
-
     }
 }

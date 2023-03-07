@@ -1,40 +1,38 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Microsoft.EntityFrameworkCore;
+using System.Runtime.Intrinsics.X86;
+using TatBlog.Data.Contexts;
+using TatBlog.Data.Seeders;
+using TatBlog.Services.Blogs;
+var builder = WebApplication.CreateBuilder(args);
 {
-    // Thêm các dịch vụ được yêu cầu bởi MVC Framework
     builder.Services.AddControllersWithViews();
+
+    builder.Services.AddDbContext<BlogDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConection")));
+    builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+    builder.Services.AddScoped<IDataSeeder, IDataSeeder>();
 }
 var app = builder.Build();
 {
-    // Cấu hình HTTP Request pipeline
-
-    // Thêm middleware để hiển thị thông báo lỗi
     if (app.Environment.IsDevelopment())
-    {
-        app.UseDeveloperExceptionPage();
-    }
-    else
-    {
-        app.UseExceptionHandler("/Blog/Error");
-            app.UseHsts();
-    }
+    { app.UseDeveloperExceptionPage(); }
+    else { app.UseExceptionHandler("/Blog/Error"); app.UseHsts(); }
+}
 
-    // Thêm middleware để chuyển hướng HTTP sang HTTPS
-    app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
-    // Thêm middleware phục vụ các yêu cầu liên quan
-    // tới các tập tin nội dung tĩnh như hình ảnh, css, ...
-    app.UseStaticFiles();
+app.UseStaticFiles();
 
-    //Thêm middleware lựa chọn endpoint phù hợp nhất
-    //  để xử lý một HTTp request.
-    app.UseRouting();
+app.UseRouting();
 
-    // Định nghĩa route template, route constraint cho các
-    // endpoints kết hợp với các action trong các controller.
-    app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Blog}/{action=Index}/{id?}");
-
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Blog}/{action=Index}/{id?}");
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<IDataSeeder>();
+    seeder.Initialize();
 }
 
 
