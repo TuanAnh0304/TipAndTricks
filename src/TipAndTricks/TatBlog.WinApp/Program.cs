@@ -71,13 +71,13 @@ namespace TatBlog.WinApp
         {
             IBlogRepository blogRepo = new BlogRepository(context);
 
-            var categories = await blogRepo.GetCategoriesAsync();
+            var categories = await blogRepo.GetCategoryItemsAsync();
 
             Console.WriteLine("{0,-5}{1,-50}{2,10}", "ID", "Name", "Count");
 
             foreach (var category in categories)
             {
-                Console.WriteLine("{0,-5}{1,-50}{2,10}", category.Id, category.Name, category.Posts.Count);
+                Console.WriteLine("{0,-5}{1,-50}{2,10}", category.Id, category.Name, category.PostCount);
             }
         }
 
@@ -103,7 +103,5 @@ namespace TatBlog.WinApp
                 Console.WriteLine("{0,-5}{1,-50}{2,10}", tag.Id, tag.Name, tag.PostCount);
             }
         }
-
-
     }
 }

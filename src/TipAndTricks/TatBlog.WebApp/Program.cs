@@ -1,6 +1,39 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System.Runtime.Intrinsics.X86;
+using TatBlog.Data.Contexts;
+using TatBlog.Data.Seeders;
+using TatBlog.Services.Blogs;
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+{
+    builder.Services.AddControllersWithViews();
 
-app.MapGet("/", () => "Hello World!");
+    builder.Services.AddDbContext<BlogDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConection")));
+    builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+    builder.Services.AddScoped<IDataSeeder, IDataSeeder>();
+}
+var app = builder.Build();
+{
+    if (app.Environment.IsDevelopment())
+    { app.UseDeveloperExceptionPage(); }
+    else { app.UseExceptionHandler("/Blog/Error"); app.UseHsts(); }
+}
+
+app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Blog}/{action=Index}/{id?}");
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<IDataSeeder>();
+    seeder.Initialize();
+}
+
 
 app.Run();
