@@ -26,10 +26,17 @@ namespace TatBlog.Services.Blogs
             CancellationToken cancellationToken = default);
 
         Task<IList<CategoryItem>> GetCategoryItemsAsync(
-            bool showOnMenu = false, CancellationToken cancellationToken = default);
+            bool showOnMenu = false, 
+            CancellationToken cancellationToken = default);
         Task<IPagedList<TagItem>> GetPagedTagAsync(
             IPagingParams pagingParams,
             CancellationToken cancellationToken = default);
-        Task<Tag> GetTagBySlugAsync(string slug, CancellationToken cancellationToken = default);
+        Task<Tag> GetTagBySlugAsync(string slug, 
+            CancellationToken cancellationToken = default);
+        Task<IPagedList<Post>> GetPagedPostsAsync(
+        PostQuery postQuery,
+        int pageNumber = 1,
+        int pageSize = 10,
+        CancellationToken cancellationToken = default);
     }
 }
