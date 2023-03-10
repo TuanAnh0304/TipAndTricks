@@ -7,8 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using TatBlog.Core.Entities;
 using TatBlog.Core.DTO;
 using TatBlog.Data.Contexts;
-using TatBlog.Core.Contracts;
 using TatBlog.Services.Extentions;
+using TatBlog.Core.Contracts;
 
 namespace TatBlog.Services.Blogs
 {
@@ -163,6 +163,23 @@ namespace TatBlog.Services.Blogs
             if (postQuery.PublishedOnly)
             {
                 posts = posts.Where(x => x.Published);
+            }
+            if (!string.IsNullOrWhiteSpace(postQuery.AuthorSlug))
+            {
+                posts = posts.Where(x => x.Author.UrlSlug == postQuery.AuthorSlug);
+            }
+
+            if (!string.IsNullOrWhiteSpace(postQuery.TagSlug))
+            {
+                posts = posts.Where(x => x.Tags.Any(t => t.UrlSlug == postQuery.TagSlug));
+            }
+            if (!string.IsNullOrWhiteSpace(postQuery.CategorySlug))
+            {
+                posts = posts.Where(x => x.Category.UrlSlug == postQuery.CategorySlug);
+            }
+            if (!string.IsNullOrWhiteSpace(postQuery.CategoryName))
+            {
+                posts = posts.Where(x => x.Category.Name == postQuery.CategoryName);
             }
             return posts;
         }

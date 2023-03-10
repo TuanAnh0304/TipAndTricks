@@ -13,10 +13,11 @@ namespace TatBlog.Services.Blogs
         public string CategorySlug { get; set; }
         public string AuthorSlug { get; set; }
         public string TagSlug { get; set; }
-        public int Day { get; set; }
-        public int Month { get; set; }
         public int Year { get; set; }
+        public int Month { get; set; }
+        public int Day { get; set; }
         public string KeyWord { get; set; }
         public bool PublishedOnly { get; set; }
+        public string CategoryName { get; set; }
     }
 }

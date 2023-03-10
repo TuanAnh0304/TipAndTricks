@@ -15,5 +15,9 @@ var app = builder.Build();
     app.UseBlogRoutes();
     app.UseDataSeeder();
 }
-
+using (var scope = app.Services.CreateScope())
+{
+    var seeder = scope.ServiceProvider.GetRequiredService<IDataSeeder>();
+    seeder.Initialize();
+}
 app.Run();

@@ -3,7 +3,7 @@
     public static class RouteExtensions
     {
 
-        static IEndpointRouteBuilder UseBlogRoutes(
+        public static IEndpointRouteBuilder UseBlogRoutes(
             this IEndpointRouteBuilder endpoints)
         {
             endpoints.MapControllerRoute(
@@ -20,6 +20,12 @@
                 name: "single-post",
                 pattern: "blog/post/{year: int}/{month: int}/{day: int}/{slug}",
                 defaults: new { controller = "Blog", action = "Post" });
+
+            endpoints.MapControllerRoute(
+                name: "posts-by-author",
+                pattern: "blog/author/{slug}",
+                defaults: new { controller = "Blog", action = "Author" }
+            );
 
             endpoints.MapControllerRoute(
                 name: "default",
