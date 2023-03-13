@@ -195,5 +195,24 @@ namespace TatBlog.Services.Blogs
                 nameof(Post.PostedDate), "DESC",
                 cancellationToken);
         }
+        public async Task<IList<AurhorItem>> GetAuthorAsync(
+            CancellationToken cancellationToken = default)
+        {
+            IQueryable<Author> author = _context.Set<Author>();
+            return await author
+            .OrderBy(x => x.FullName)
+            .Select(x => new AurhorItem()
+            {
+                Id = x.Id,
+                FullName = x.FullName,
+                UrlSlug = x.UrlSlug,
+                Email = x.Email,
+                ImageUrl = x.ImageUrl,
+                JoinedDate = x.JoinedDate,
+                Notes = x.Notes,
+                PostCount = x.Posts.Count(p => p.Published)
+            }).ToListAsync(cancellationToken);
+
+        }
     }
 }
