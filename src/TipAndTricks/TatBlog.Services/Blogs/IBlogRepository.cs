@@ -17,7 +17,7 @@ namespace TatBlog.Services.Blogs
             int month,
             string slug,
             CancellationToken cancellationToken = default);
-
+        Task<Tag> GetTagAsync(string slug, CancellationToken cancellationToken = default);
         Task<IList<Post>> GetPopularArticlesAsync(
             int numPost,
             CancellationToken cancellationToken = default);
@@ -46,5 +46,11 @@ namespace TatBlog.Services.Blogs
 
         Task<IList<AurhorItem>> GetAuthorAsync(
             CancellationToken cancellationToken = default);
+        Task<Post> GetPostByIdAsync(
+        int postId, bool includeDetails = false,
+        CancellationToken cancellationToken = default);
+        Task<Post> CreateOrUpdatePostAsync(
+        Post post, IEnumerable<string> tags,
+        CancellationToken cancellationToken = default);
     }
 }

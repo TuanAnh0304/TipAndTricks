@@ -3,12 +3,14 @@ using TatBlog.Data.Contexts;
 using TatBlog.Data.Seeders;
 using TatBlog.Services.Blogs;
 using TatBlog.WebApp.Extensions;
-using TatBlog.WebApp.Mapster;
+using TatBlog.WebApp.Mapsters;
+using TatBlog.WebApp.Validations;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.ConfigureMvc().ConfigureServices();
+    builder.ConfigureMvc().ConfigureServices().ConfigureMapster().ConfigureFluentValidation();
 }
+
 var app = builder.Build();
 {
     app.UseRequestPipeline();
@@ -21,9 +23,5 @@ using (var scope = app.Services.CreateScope())
     seeder.Initialize();
 }
 
-var builder = WebApplication.CreateBuilder(args);
-{
-    builder.ConfigureMvc().ConfigureServices().ConfigureMapster();
-}
 
 app.Run();

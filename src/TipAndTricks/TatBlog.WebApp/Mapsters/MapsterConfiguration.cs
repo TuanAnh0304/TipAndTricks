@@ -2,8 +2,9 @@
 using TatBlog.Core.Entities;
 using TatBlog.WebApp.Areas.Admin.Models;
 using TatBlog.Services.Blogs;
+using TatBlog.Core.DTO;
 
-namespace TatBlog.WebApp.Mapster
+namespace TatBlog.WebApp.Mapsters
 {
     public class MapsterConfiguration : IRegister
     {
@@ -15,6 +16,14 @@ namespace TatBlog.WebApp.Mapster
 
             config.NewConfig<PostFilterModel, PostQuery>()
                 .Map(dest => dest.PublishedOnly, src => false);
+            config.NewConfig<PostEditModel, Post>()
+                .Ignore(dest => dest.Id)
+                .Ignore(dest => dest.ImageUrl);
+            config.NewConfig<Post, PostEditModel>()
+                .Map(dest => dest.SelectTags, src => string.Join("\r\n", src.Tags.Select(x => x.Name)))
+                .Ignore(dest => dest.CategoryList)
+                .Ignore(dest => dest.AuthorList)
+                .Ignore(dest => dest.ImageFile);
         }
     
     }
