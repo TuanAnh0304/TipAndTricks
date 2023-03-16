@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace TatBlog.WebApp.Areas.Admin.Controllers
+namespace TatBlog.WebApp.Areas.Admin.Controllers;
+
+public class DashboardController : Controller
 {
-    public class DashboardController:Controller
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        return View();
     }
 }

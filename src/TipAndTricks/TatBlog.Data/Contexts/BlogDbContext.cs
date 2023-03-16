@@ -19,7 +19,7 @@ namespace TatBlog.Data.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=CHOAA\SQLEXPRESS;Database=Tatblog;Trusted_Connection=True;MultipleActiveResultSets=True;Encrypt=False");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=Tatblog;Trusted_Connection=True;MultipleActiveResultSets=True;Encrypt=False");
 
         }
         public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options)
