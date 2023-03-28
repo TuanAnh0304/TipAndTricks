@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TatBlog.Core.DTO
 {
-    public class AurhorItem
+    public class AuthorItem
     {
         public int Id { get; set; }
         public string FullName { get; set; }

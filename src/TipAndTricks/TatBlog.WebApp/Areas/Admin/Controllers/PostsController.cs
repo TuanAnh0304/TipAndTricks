@@ -12,21 +12,28 @@ namespace TatBlog.WebApp.Areas.Admin.Controllers
 {
     public class PostsController : Controller
     {
+        private readonly ILogger<PostsController> _logger;
         private readonly IBlogRepository _blogRepository;
         private readonly IMediaManager _mediaManager;
         private readonly IMapper _mapper;
-
-        public PostsController(IBlogRepository blogRepository,
+        private readonly IAuthorRepository _authorRepository;
+        
+        public PostsController(
+            ILogger<PostsController> logger,
+            IBlogRepository blogRepository,
+            IAuthorRepository authorRepository,
             IMediaManager mediaManager,
             IMapper mapper)
         {
+            _logger = logger;
             _blogRepository = blogRepository;
+            _authorRepository = authorRepository;
             _mediaManager = mediaManager;
             _mapper = mapper;
         }
         private async Task PopulatePostFilterModelAsync(PostFilterModel model)
         {
-            var authors = await _blogRepository.GetAuthorAsync();
+            var authors = await _authorRepository.GetAuthorsAsync();
             var categories = await _blogRepository.GetCategoryItemsAsync();
 
             model.AuthorList = authors.Select(a => new SelectListItem()
@@ -42,7 +49,7 @@ namespace TatBlog.WebApp.Areas.Admin.Controllers
         }
         private async Task PopulatePostEditModelAsync(PostEditModel model)
         {
-            var authors = await _blogRepository.GetAuthorAsync();
+            var authors = await _authorRepository.GetAuthorsAsync();
             var categories = await _blogRepository.GetCategoryItemsAsync();
 
             model.AuthorList = authors.Select(a => new SelectListItem()
@@ -59,10 +66,15 @@ namespace TatBlog.WebApp.Areas.Admin.Controllers
         
         public async Task<IActionResult> Index(PostFilterModel model)
         {
+            _logger.LogInformation("Tạo điều kiện truy vấn");
             var postQuery = _mapper.Map<PostQuery>(model);
+
+            _logger.LogInformation("Lấy danh sách bài viết từ CSDL");
 
             ViewBag.PostsList = await _blogRepository
                 .GetPagedPostsAsync(postQuery, 1, 10);
+
+            _logger.LogInformation("Chuẩn bị dữ liệu cho ViewModel");
 
             await PopulatePostFilterModelAsync(model);
 

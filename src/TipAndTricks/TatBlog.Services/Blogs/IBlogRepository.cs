@@ -43,9 +43,6 @@ namespace TatBlog.Services.Blogs
         int pageNumber = 1,
         int pageSize = 10,
         CancellationToken cancellationToken = default);
-
-        Task<IList<AurhorItem>> GetAuthorAsync(
-            CancellationToken cancellationToken = default);
         Task<Post> GetPostByIdAsync(
         int postId, bool includeDetails = false,
         CancellationToken cancellationToken = default);
