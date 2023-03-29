@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using TatBlog.Core.Entities;
 using TatBlog.Services.Media;
 using Mapster;
+using TatBlog.WebApi.Filters;
 
 namespace TatBlog.WebApi.Endpoints
 {
@@ -34,6 +35,7 @@ namespace TatBlog.WebApi.Endpoints
 
             routeGroupBuilder.MapPost("/", AddAuthor)
                          .WithName("AddNewAuthor")
+                          .AddEndpointFilter<ValidatorFilter<AuthorEditModel>>()
                          .Produces(201)
                          .Produces(400)
                          .Produces(409);
@@ -46,6 +48,7 @@ namespace TatBlog.WebApi.Endpoints
 
             routeGroupBuilder.MapPut("/{id:int}", UpdateAuthor)
                          .WithName("UpdateAuthor")
+                         .AddEndpointFilter<ValidatorFilter<AuthorEditModel>>()
                          .Produces(204)
                          .Produces(400)
                          .Produces(409);
