@@ -1,5 +1,6 @@
 using TatBlog.WebApi.Extensions;
-
+using TatBlog.WebApi.Mapsters;
+using TatBlog.WebApi.Validations;
 
 var builder = WebApplication.CreateBuilder(args);
 {
@@ -7,12 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
         .ConfigureCors()
         .ConfigureNLog()
         .ConfigureServices()
-        .ConfigureSwaggerOpenApi();
+        .ConfigureSwaggerOpenApi()
+        .ConfigureMapster()
+        .ConfigureFluentValidation();
         
 }
 var app = builder.Build();
 {
     app.SetupRequestPipeLine();
+
+    
 
     app.Run();
 }
