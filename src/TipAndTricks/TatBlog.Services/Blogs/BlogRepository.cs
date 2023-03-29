@@ -209,15 +209,26 @@ namespace TatBlog.Services.Blogs
         }
 
         public async Task<IPagedList<Post>> GetPagedPostsAsync(
-        PostQuery postQuery,
+        PostQuery condition,
         int pageNumber = 1,
         int pageSize = 10,
         CancellationToken cancellationToken = default)
         {
-            return await FilterPosts(postQuery).ToPagedListAsync(
+            return await FilterPosts(condition).ToPagedListAsync(
                 pageNumber, pageSize,
                 nameof(Post.PostedDate), "DESC",
                 cancellationToken);
+        }
+
+        public async Task<IPagedList<T>> GetPagedPostsAsync<T>(
+            PostQuery condition,
+            IPagingParams pagingParams,
+            Func<IQueryable<Post>, IQueryable<T>> mapper)
+        {
+            var posts = FilterPosts(condition);
+            var projectedPosts = mapper(posts);
+
+            return await projectedPosts.ToPagedListAsync(pagingParams);
         }
         public async Task<Post> GetPostByIdAsync(
         int postId, bool includeDetails = false,
