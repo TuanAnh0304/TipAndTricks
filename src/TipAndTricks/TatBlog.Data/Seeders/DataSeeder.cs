@@ -38,38 +38,38 @@ namespace TatBlog.Data.Seeders
                 },
                 new()
                 {
-                    FullName = "Nguyệt Hạ",
-                    UrlSlug = "nguyet-ha",
-                    Email ="nguyetha5@gmail.com",
-                    JoinedDate = new DateTime(2020,4,19)
+                    FullName = "Tuệ An",
+                    UrlSlug = "tue-an",
+                    Email ="tuean5@gmail.com",
+                    JoinedDate = new DateTime(2018,2,19)
                 },
                 new()
                 {
-                    FullName = "Thi Thi",
-                    UrlSlug = "thi-thi",
-                    Email ="thithi1167@gmail.com",
-                    JoinedDate = new DateTime(2021,8,30)
+                    FullName = "Admin",
+                    UrlSlug = "admin",
+                    Email ="admin@gmail.com",
+                    JoinedDate = new DateTime(2022,5,21)
                 },
                 new()
                 {
-                    FullName = "Vũ Phong",
-                    UrlSlug = "vu-phong",
-                    Email ="vuphong26@gmail.com",
-                    JoinedDate = new DateTime(2019,2,5)
+                    FullName = "Mẫn An",
+                    UrlSlug = "man-an",
+                    Email ="manan12@gmail.com",
+                    JoinedDate = new DateTime(2017,2,4)
                 },
                 new()
                 {
-                    FullName = "Di Ba",
-                    UrlSlug = "di-ba",
-                    Email ="diba15@gmail.com",
-                    JoinedDate = new DateTime(2020,7,6)
+                    FullName = "Thanh Phong",
+                    UrlSlug = "thanhphong",
+                    Email ="thanhphong75@gmail.com",
+                    JoinedDate = new DateTime(2021,3,6)
                 },
                 new()
                 {
-                    FullName = "Bạc Vũ Minh",
-                    UrlSlug = "bac-vu-minh",
-                    Email ="bacvuminh@gmail.com",
-                    JoinedDate = new DateTime(2022,7,5)
+                    FullName = "Hoài Niệm",
+                    UrlSlug = "hoainiem",
+                    Email ="hoainiem789@gmail.com",
+                    JoinedDate = new DateTime(2012,7,1)
                 }
             };
             _dbContext.Author.AddRange(authors);
@@ -86,18 +86,14 @@ namespace TatBlog.Data.Seeders
                 new() { Name ="Messaging", Description ="Messaging", UrlSlug = "messaging", ShowOnMenu = true},
                 new() { Name ="OOP", Description ="OOP", UrlSlug = "oop", ShowOnMenu = true},
                 new() { Name ="Design Patterns", Description ="Design Patterns", UrlSlug = "design-patterns", ShowOnMenu = true},
-                new() { Name ="Git", Description ="Git", UrlSlug = "git", ShowOnMenu = true},
-                new() { Name ="Github", Description ="Github", UrlSlug = "github", ShowOnMenu = true },
-                new() { Name ="Architecture", Description ="Architecture", UrlSlug = "architecture", ShowOnMenu = true},
-                new() { Name ="C Sharp", Description ="c-sharp", UrlSlug = "csharp", ShowOnMenu = true},
-                new() { Name ="Java", Description ="Java", UrlSlug = "java", ShowOnMenu = true},
-                new() { Name ="Workpress", Description ="Workpress", UrlSlug = "workpress", ShowOnMenu = true},
-                new() { Name ="Golang", Description ="Golang", UrlSlug = "golang", ShowOnMenu = true },
-                new() { Name ="Ruby", Description ="Ruby", UrlSlug = "ruby", ShowOnMenu = true},
-                new() { Name ="C Sharp", Description ="C Sharp", UrlSlug = "csharp", ShowOnMenu = true},
-                new() { Name ="PHP", Description ="PHP", UrlSlug = "php", ShowOnMenu = true},
-                new() { Name ="Dart", Description ="Dart", UrlSlug = "dart", ShowOnMenu = true},
-                new() { Name ="JavaScript", Description ="JavaScript", UrlSlug = "javascript", ShowOnMenu = true}
+                new() { Name ="Sống", Description ="Sống", UrlSlug = "song", ShowOnMenu = true},
+                new() { Name ="Câu chuyện cuộc sống", Description ="Câu chuyện cuộc sống", UrlSlug = "cauchuyenvecuocsong", ShowOnMenu = true },
+                new() { Name ="Yêu thương, liệu có giản đơn", Description ="Yêu thương, liệu có giản đơn", UrlSlug = "yeuthuonglieucogiandon", ShowOnMenu = true},
+                new() { Name ="Người bạn tri kỉ", Description ="Người bạn tri kỉ", UrlSlug = "nguoibantriki", ShowOnMenu = true},
+                new() { Name ="Thiên nhiên, động vật", Description ="Thiên nhiên, động vật", UrlSlug = "thiennhiendongvat", ShowOnMenu = true},
+                new() { Name ="Hạnh phúc ở đâu? Ở ngay cách mà bạn đối diện với cuộc sống ấy", Description ="Hạnh phúc ở đâu? Ở ngay cách mà bạn đối diện với cuộc sống ấy", UrlSlug = "hanhphucodau", ShowOnMenu = true},
+                new() { Name ="trái tim", Description ="Trái tim", UrlSlug = "traitim", ShowOnMenu = true },
+                
             };
             _dbContext.AddRange(categories);
             _dbContext.SaveChanges();
@@ -112,26 +108,11 @@ namespace TatBlog.Data.Seeders
                 new() {Name = "Razor Page", Description = "Razor Page", UrlSlug="razor-page"},
                 new() {Name = "Blazor", Description = "Blazor", UrlSlug="blazor"},
                 new() {Name = "Neural Network", Description = "Neural Network", UrlSlug="neural-network"},
-                new() {Name = "JS", Description = "JavaScript", UrlSlug="javascript"},
-                new() {Name = "Golang", Description ="Golang", UrlSlug = "golang"},
-                new() {Name = "Dart", Description ="Dart", UrlSlug = "dart"},
-                new() {Name = "Blazor", Description = "Blazor", UrlSlug="blazor"},
-                new() {Name = "Neural Network", Description = "Neural Network", UrlSlug="neural-network"},
-                new() {Name = "Google", Description = "Google applications", UrlSlug="google-applications"},
-                new() {Name = "Ruby", Description ="Ruby", UrlSlug = "ruby"},
-                new() {Name = "Razor Page", Description = "Razor Page", UrlSlug="razor-page"},
-                new() {Name = "Blazor", Description = "Blazor", UrlSlug="blazor"},
-                new() {Name = "Neural Network", Description = "Neural Network", UrlSlug="neural-network"},
-                new() {Name = "Google", Description = "Google applications", UrlSlug="google-applications"},
-                new() {Name = "Messaging", Description ="Messaging", UrlSlug = "messaging"},
-                new() {Name = "OOP", Description ="OOP", UrlSlug = "oop"},
-                new() {Name = "Design Patterns", Description ="Design Patterns", UrlSlug = "design-patterns"},
-                new() {Name = "Git", Description ="Git", UrlSlug = "git"},
-                new() {Name = "Github", Description ="Github", UrlSlug = "github"},
-                new() {Name = "Architecture", Description ="Architecture", UrlSlug = "architecture"},
-                new() {Name = "C Sharp", Description ="c-sharp", UrlSlug = "csharp"},
-                new() {Name = "Java", Description ="Java", UrlSlug = "java"},
-                new() {Name = "Workpress", Description ="Workpress", UrlSlug = "workpress"},
+                new() {Name = "Sống", Description = "Sống", UrlSlug="song"},
+                new() {Name = "Câu chuyện cuộc sống", Description ="Câu chuyện cuộc sống", UrlSlug = "cauchuyenvecuocsong"},
+                new() {Name = "Hạnh phúc", Description ="Hạnh phú ở đâu?", UrlSlug = "hanhphucodau"},
+                new() {Name = "trái tim", Description = "traitim", UrlSlug="trai-tim"}
+                
 
             };
             _dbContext.AddRange(tags);
@@ -166,11 +147,11 @@ namespace TatBlog.Data.Seeders
                 },
                 new()
                 {
-                    Title ="Vietnam Post English Club",
-                    ShortDescription = "Vietnam Post English Club was established and operated by the Standing Committee chaired by Mr. Pham Anh Tuan – Chairman of Vietnam Post",
-                    Description = "On 7th April 2018, Vietnam Post opened its English Club with the objectives to improve English skills for all staff and employees",
-                    Meta = "Vietnam Post English Club",
-                    UrlSlug = "Vietnam-Post-English-Club",
+                    Title ="10 điều ai cũng phải khắc cốt ghi tâm nếu muốn có một cuộc đời suôn sẻ",
+                    ShortDescription = "Cuộc sống thay đổi, vận động không ngừng nghỉ… vì thế nếu bạn muốn đứng vững trong xã hội này, nhất định phải ghi nhớ 10 bài học sau.",
+                    Description = "Cuộc sống thay đổi, vận động không ngừng nghỉ… vì thế nếu bạn muốn đứng vững trong xã hội này, nhất định phải ghi nhớ 10 bài học sau.",
+                    Meta = " khắc cốt ghi tâm",
+                    UrlSlug = "10-dieu-ai-cung-phai-khac-cot-ghi-tam",
                     Published = true,
                     PostedDate = new DateTime(2018,9,30,10,20,0),
                     ModifiedDate = null,
@@ -184,11 +165,11 @@ namespace TatBlog.Data.Seeders
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Câu chuyện ý nghĩa dành cho người đi làm: Hãy làm việc bằng cái tâm, Chức danh có thực sự quan trọng, Đi hay ở là sự lựa chọn",
+                    ShortDescription = "Trong cuộc sống, không ít những kẻ nhờ thủ đoạn, hoặc do may mắn, bỗng ngồi vào một ví trí nào đó, thấy những người xung quanh đều xum xoe nịnh nọt, bổng lộc tự đến đầy nhà… thì tưởng mình là tài năng, cao quý và oai vệ lắm.\r\n\r\n",
+                    Description = "Trong cuộc sống, không ít những kẻ nhờ thủ đoạn, hoặc do may mắn, bỗng ngồi vào một ví trí nào đó, thấy những người xung quanh đều xum xoe nịnh nọt, bổng lộc tự đến đầy nhà… thì tưởng mình là tài năng, cao quý và oai vệ lắm.\r\n\r\n",
+                    Meta = "hãy làm việc bằng cái tâm,",
+                    UrlSlug = "cau-chuyen-y-nghia-danh-cho-nguoi-di",
                     Published = true,
                     PostedDate = new DateTime(2009,9,3,1,2,0),
                     ModifiedDate = null,
@@ -202,123 +183,33 @@ namespace TatBlog.Data.Seeders
                 },
                 new()
                 {
-                    Title ="ASP.NET Core Diagnostic Scenarios",
-                    ShortDescription = "David and friends has a great repos",
-                    Description = "Here's a few great DON'T and DO examples",
-                    Meta = "David and friends has a great repos",
-                    UrlSlug = "aspnet-core-diagnostic-scenarios",
+                    Title ="Hạnh phúc ở đâu? Ở ngay cách mà bạn đối diện với cuộc sống ấy",
+                    ShortDescription = "mong muốn hôm nay vui vẻ hay không vui vẻ",
+                    Description = "mong muốn hôm nay vui vẻ hay không vui vẻ",
+                    Meta = "Hạnh phúc ở đâu?",
+                    UrlSlug = "hanhphucodau",
                     Published = true,
                     PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
                     ViewCount = 10,
-                    Author = authors[0],
-                    Category = categories[0],
+                    Author = authors[4],
+                    Category = categories[4],
                     Tags = new List<Tag>()
                     {
-                        tags[0]
+                        tags[4]
                     }
                 },
                 new()
                 {
-                    Title ="ASP.NET Core Diagnostic Scenarios",
-                    ShortDescription = "David and friends has a great repos",
-                    Description = "Here's a few great DON'T and DO examples",
-                    Meta = "David and friends has a great repos",
-                    UrlSlug = "aspnet-core-diagnostic-scenarios",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
                     PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
                     ViewCount = 10,
-                    Author = authors[0],
-                    Category = categories[0],
-                    Tags = new List<Tag>()
-                    {
-                        tags[0]
-                    }
-                },
-                new()
-                {
-                    Title ="Ruby",
-                    ShortDescription = "At GemSelect we sell natural Rubies from many different locations like Burma, Madagascar, Mozambique and Thailand.",
-                    Description = "We carry popular shapes and sizes which are suitable for all kinds of jewelry.",
-                    Meta = "We sell only natural Rubies and offer certification from well known gemological labs like ICA Gemlab and AIG Gemlab.",
-                    UrlSlug = "gemselect",
-                    Published = true,
-                    PostedDate = new DateTime(2011,8,30,1,20,0),
-                    ModifiedDate = null,
-                    ViewCount = 10,
-                    Author = authors[0],
-                    Category = categories[0],
-                    Tags = new List<Tag>()
-                    {
-                        tags[1]
-                    }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[2],
-                    Category = categories[2],
-                    Tags = new List<Tag>()
-                    {
-                        tags[2]
-                    }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[3],
-                    Category = categories[3],
-                    Tags = new List<Tag>()
-                    {
-                        tags[3]
-                    }
-                },
-                new()
-                {
-                    Title ="Ruby",
-                    ShortDescription = "At GemSelect we sell natural Rubies from many different locations like Burma, Madagascar, Mozambique and Thailand.",
-                    Description = "We carry popular shapes and sizes which are suitable for all kinds of jewelry.",
-                    Meta = "We sell only natural Rubies and offer certification from well known gemological labs like ICA Gemlab and AIG Gemlab.",
-                    UrlSlug = "gemselect",
-                    Published = true,
-                    PostedDate = new DateTime(2011,8,30,1,20,0),
-                    ModifiedDate = null,
-                    ViewCount = 10,
-                    Author = authors[0],
-                    Category = categories[0],
-                    Tags = new List<Tag>()
-                    {
-                        tags[1]
-                    }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
                     Author = authors[5],
                     Category = categories[5],
                     Tags = new List<Tag>()
@@ -328,383 +219,238 @@ namespace TatBlog.Data.Seeders
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
-                    }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
-                    }
-                },
-                new()
-                {
-                    Title ="Ruby",
-                    ShortDescription = "At GemSelect we sell natural Rubies from many different locations like Burma, Madagascar, Mozambique and Thailand.",
-                    Description = "We carry popular shapes and sizes which are suitable for all kinds of jewelry.",
-                    Meta = "We sell only natural Rubies and offer certification from well known gemological labs like ICA Gemlab and AIG Gemlab.",
-                    UrlSlug = "gemselect",
-                    Published = true,
-                    PostedDate = new DateTime(2011,8,30,1,20,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
                     ViewCount = 10,
-                    Author = authors[0],
-                    Category = categories[0],
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[1]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Dart",
-                    ShortDescription = "Develop with a programming language specialized around the needs of user interface creation",
-                    Description = "Make changes iteratively: use hot reload to see the result instantly in your running app",
-                    Meta = "Develop with a programming language specialized around the needs of user interface creation",
-                    UrlSlug = "dart",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2008,2,4,1,2,3),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Dart",
-                    ShortDescription = "Develop with a programming language specialized around the needs of user interface creation",
-                    Description = "Make changes iteratively: use hot reload to see the result instantly in your running app",
-                    Meta = "Develop with a programming language specialized around the needs of user interface creation",
-                    UrlSlug = "dart",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2008,2,4,1,2,3),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
-                    }
-
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
-                    }
-                },
-               new()
-                {
-                    Title ="Dart",
-                    ShortDescription = "Develop with a programming language specialized around the needs of user interface creation",
-                    Description = "Make changes iteratively: use hot reload to see the result instantly in your running app",
-                    Meta = "Develop with a programming language specialized around the needs of user interface creation",
-                    UrlSlug = "dart",
-                    Published = true,
-                    PostedDate = new DateTime(2008,2,4,1,2,3),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
                 },
                 new()
                 {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
+                    Title ="Hỡi những trái tim tuổi 25, đừng sợ!",
+                    ShortDescription = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Description = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    Meta = "Khi bạn coi tuổi tác chỉ là con số để tượng trưng, thì chẳng có gì để sợ hãi cả!",
+                    UrlSlug = "tuoi25dungso",
                     Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
+                    PostedDate = new DateTime(2021,9,30,10,20,0),
                     ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
+                    ViewCount = 10,
+                    Author = authors[5],
+                    Category = categories[5],
                     Tags = new List<Tag>()
                     {
-                        tags[6]
+                        tags[5]
                     }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
-                    }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
-                    }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
-                    }
-                },
-                new()
-                {
-                    Title ="Google",
-                    ShortDescription = "công cụ tìm kiếm phổ biến nhất chiếm hơn 90% thị trường trên toàn thế giới",
-                    Description = "Google còn tự hào về các tính năng nổi bật khiến nó trở thành công cụ tìm kiếm tốt nhất trên thị trường",
-                    Meta = "nó tự hào có các thuật toán tiên tiến, giao diện dễ sử dụng",
-                    UrlSlug = "google",
-                    Published = true,
-                    PostedDate = new DateTime(2009,9,3,1,2,0),
-                    ModifiedDate = null,
-                    ViewCount = 15,
-                    Author = authors[4],
-                    Category = categories[6],
-                    Tags = new List<Tag>()
-                    {
-                        tags[6]
-                    }
-                },
+                }
 
             };
             _dbContext.AddRange(posts);

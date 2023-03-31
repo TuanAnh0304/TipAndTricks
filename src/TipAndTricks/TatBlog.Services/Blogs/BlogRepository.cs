@@ -144,67 +144,62 @@ namespace TatBlog.Services.Blogs
 
             return await tagQuery.FirstOrDefaultAsync(cancellationToken);
         }
-        public IQueryable<Post> FilterPosts(PostQuery postQuery)
+        public IQueryable<Post> FilterPosts(PostQuery condition)
         {
             IQueryable<Post> posts = _context.Set<Post>()
-                .Include(x => x.Category)
-                .Include(x => x.Author)
-                .Include(x => x.Tags);
+            .Include(x => x.Category)
+            .Include(x => x.Author)
+            .Include(x => x.Tags);
 
-            if (postQuery.CategoryId > 0)
-            {
-                posts = posts.Where(x => x.CategoryId == postQuery.CategoryId);
-            }
-
-            if (!string.IsNullOrWhiteSpace(postQuery.CategorySlug))
-            {
-                posts = posts.Where(x => x.Category.UrlSlug == postQuery.CategorySlug);
-            }
-
-            if (postQuery.AuthorId > 0)
-            {
-                posts = posts.Where(x => x.AuthorId == postQuery.AuthorId);
-            }
-
-            if (!string.IsNullOrWhiteSpace(postQuery.KeyWord))
-            {
-                posts = posts.Where(x => x.Title.Contains(postQuery.KeyWord) ||
-                                         x.ShortDescription.Contains(postQuery.KeyWord) ||
-                                         x.Description.Contains(postQuery.KeyWord) ||
-                                         x.Category.Name.Contains(postQuery.KeyWord) ||
-                                         x.Tags.Any(t => t.Name.Contains(postQuery.KeyWord)));
-            }
-
-            if (postQuery.Year > 0)
-            {
-                posts = posts.Where(x => x.PostedDate.Year == postQuery.Year);
-            }
-
-            if (postQuery.Month > 0)
-            {
-                posts = posts.Where(x => x.PostedDate.Month == postQuery.Month);
-            }
-            if (postQuery.PublishedOnly)
+            if (condition.PublishedOnly)
             {
                 posts = posts.Where(x => x.Published);
             }
-            if (!string.IsNullOrWhiteSpace(postQuery.AuthorSlug))
+
+            if (condition.CategoryId > 0)
             {
-                posts = posts.Where(x => x.Author.UrlSlug == postQuery.AuthorSlug);
+                posts = posts.Where(x => x.CategoryId == condition.CategoryId);
             }
 
-            if (!string.IsNullOrWhiteSpace(postQuery.TagSlug))
+            if (!string.IsNullOrWhiteSpace(condition.CategorySlug))
             {
-                posts = posts.Where(x => x.Tags.Any(t => t.UrlSlug == postQuery.TagSlug));
+                posts = posts.Where(x => x.Category.UrlSlug == condition.CategorySlug);
             }
-            if (!string.IsNullOrWhiteSpace(postQuery.CategorySlug))
+
+            if (condition.AuthorId > 0)
             {
-                posts = posts.Where(x => x.Category.UrlSlug == postQuery.CategorySlug);
+                posts = posts.Where(x => x.AuthorId == condition.AuthorId);
             }
-            if (!string.IsNullOrWhiteSpace(postQuery.CategoryName))
+
+            if (!string.IsNullOrWhiteSpace(condition.AuthorSlug))
             {
-                posts = posts.Where(x => x.Category.Name == postQuery.CategoryName);
+                posts = posts.Where(x => x.Author.UrlSlug == condition.AuthorSlug);
             }
+
+            if (!string.IsNullOrWhiteSpace(condition.TagSlug))
+            {
+                posts = posts.Where(x => x.Tags.Any(t => t.UrlSlug == condition.TagSlug));
+            }
+
+            if (!string.IsNullOrWhiteSpace(condition.KeyWord))
+            {
+                posts = posts.Where(x => x.Title.Contains(condition.KeyWord) ||
+                                         x.ShortDescription.Contains(condition.KeyWord) ||
+                                         x.Description.Contains(condition.KeyWord) ||
+                                         x.Category.Name.Contains(condition.KeyWord) ||
+                                         x.Tags.Any(t => t.Name.Contains(condition.KeyWord)));
+            }
+
+            if (condition.Year > 0)
+            {
+                posts = posts.Where(x => x.PostedDate.Year == condition.Year);
+            }
+
+            if (condition.Month > 0)
+            {
+                posts = posts.Where(x => x.PostedDate.Month == condition.Month);
+            }
+
             return posts;
         }
 
