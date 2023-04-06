@@ -62,13 +62,13 @@ namespace TatBlog.WebApi.Endpoints
             return app;
         }
         private static async Task<IResult> GetAuthors(
-            [AsParameters] AuthorFilterModel model,
-            IAuthorRepository authorRepository)
+             [AsParameters] AuthorFilterModel model,
+             IAuthorRepository authorRepository)
         {
-            var authorList = await authorRepository.GetPagedAuthorsAsync(model, model.Name);
-
-            var paginationResult = new PaginationResult<AuthorItem>(authorList);
-
+            var authorsList = await authorRepository.GetPagedAuthorsAsync(model,
+           model.Name);
+            var paginationResult = new
+           PaginationResult<AuthorItem>(authorsList);
             return Results.Ok(ApiResponse.Success(paginationResult));
         }
         private static async Task<IResult> GetAuthorDetails(
