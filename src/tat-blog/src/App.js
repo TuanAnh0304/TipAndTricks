@@ -8,11 +8,19 @@ import Index from './Pages/Index';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import RSS from './Pages/RSS';
+import NotFound from './Pages/NotFound';
+import BadRequest from './Pages/BadRequest';
 import{
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
+import { Addon } from 'react-bootstrap/lib/InputGroup';
+import AdminLayout from './Pages/Admin.js/Layout';
+import Authors from './Pages/Admin.js/Authors';
+import Categories from './Pages/Admin.js/Categories';
+import Tags from './Pages/Admin.js/Tags';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
@@ -29,6 +37,16 @@ function App() {
                   <Route path='blog/Contact' element={<Contact />} />
                   <Route path='blog/About' element={<About />} />
                   <Route path='blog/RSS' element={<RSS />}/>
+                </Route>
+                <Route path='/admin' element={<AdminLayout />} >
+                  <Route path='/admin' element={<AdminIndex.default/>} />
+                  <Route path='/admin/authors' element={<Authors/>} />
+                  <Route path='/admin/categories' element={<Categories/>} />
+                  <Route path='/admin/comments' element={<Comments/>} />
+                  <Route path='/admin/posts' element={<Posts/>} />
+                  <Route path='/admin/tags' element={<Tags/>} />
+                  <Route path='/400' element={<BadRequest />} />
+                  <Route path='*' element={<NotFound />} />
                 </Route>
               </Routes>
             </div>
