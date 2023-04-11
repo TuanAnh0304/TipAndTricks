@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../../../Services/BlogRepository';
 import Loading from '../../../Components/Loading';
+import PostFilterPane from '../../Components/Admin/PostFilterPane'; 
+
 
 const Posts = () => {
     const [postsList, setPostsList] = useState([]);
@@ -24,7 +26,8 @@ const Posts = () => {
 
  return (
     <>
-        <h1>Danh sách bài viết {id}</h1>
+        <h1>Danh sách bài viết </h1>
+        <PostFilterPane />
         {isVisibleLoading ? <Loading /> :
             <Table striped responsive bordered>
                 <thead>

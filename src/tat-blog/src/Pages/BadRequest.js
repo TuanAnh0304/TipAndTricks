@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useQuery } from '../Utils/Utils';
+import { useQuery } from 'react-query';
 
 const BadRequest = () => {
 

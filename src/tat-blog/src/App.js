@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
 import Sidebar from './Components/Sidebar';
@@ -8,19 +7,22 @@ import Index from './Pages/Index';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import RSS from './Pages/RSS';
-import NotFound from './Pages/NotFound';
-import BadRequest from './Pages/BadRequest';
+
 import{
   BrowserRouter as Router,
   Routes,
   Route,
 } from 'react-router-dom';
-import { Addon } from 'react-bootstrap/lib/InputGroup';
-import AdminLayout from './Pages/Admin.js/Layout';
-import Authors from './Pages/Admin.js/Authors';
-import Categories from './Pages/Admin.js/Categories';
-import Tags from './Pages/Admin.js/Tags';
+import AdminIndex from './Pages/Admin/Index';
+import AdminLayout from './Pages/Admin/Layout';
+import Authors from './Pages/Admin/Authors';
+import Categories from './Pages/Admin/Categories';
+import Tags from './Pages/Admin/Tags';
+import Posts from './Pages/Admin/Post/Posts';
+import Comments from './Pages/Admin/Comments';
+
 import NotFound from './Pages/NotFound';
+import BadRequest from './Pages/BadRequest';
 
 function App() {
   return (
@@ -45,9 +47,9 @@ function App() {
                   <Route path='/admin/comments' element={<Comments/>} />
                   <Route path='/admin/posts' element={<Posts/>} />
                   <Route path='/admin/tags' element={<Tags/>} />
-                  <Route path='/400' element={<BadRequest />} />
-                  <Route path='*' element={<NotFound />} />
                 </Route>
+                <Route path='/400' element={<BadRequest />} />
+                <Route path='*' element={<NotFound />} />
               </Routes>
             </div>
             <div className='col-3 border-start'>
