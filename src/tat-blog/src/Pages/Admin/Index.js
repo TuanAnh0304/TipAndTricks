@@ -1,4 +1,4 @@
-const Index = () => {
+const AdminIndex = () => {
     return (
         <>
             <h1>Đây là khu vực dành cho người quản trị</h1>
@@ -7,4 +7,4 @@ const Index = () => {
     )
 }
 
-export default Index;
+export default AdminIndex;

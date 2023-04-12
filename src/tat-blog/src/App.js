@@ -13,7 +13,7 @@ import{
   Routes,
   Route,
 } from 'react-router-dom';
-import AdminIndex from './Pages/Admin/Index';
+import * as AdminIndex from './Pages/Admin/Index';
 import AdminLayout from './Pages/Admin/Layout';
 import Authors from './Pages/Admin/Authors';
 import Categories from './Pages/Admin/Categories';
@@ -24,22 +24,15 @@ import Comments from './Pages/Admin/Comments';
 import NotFound from './Pages/NotFound';
 import BadRequest from './Pages/BadRequest';
 
+
 function App() {
   return (
     <div >
       <Router>
-        <Navbar/>
         <div className='container-fluid'>
           <div className='row'>
             <div className='col-9'>
               <Routes>
-                <Route path='/' element={<Layout />}>
-                  <Route path='/' element={<Index />}/>
-                  <Route path='blog' element={<Index />} />
-                  <Route path='blog/Contact' element={<Contact />} />
-                  <Route path='blog/About' element={<About />} />
-                  <Route path='blog/RSS' element={<RSS />}/>
-                </Route>
                 <Route path='/admin' element={<AdminLayout />} >
                   <Route path='/admin' element={<AdminIndex.default/>} />
                   <Route path='/admin/authors' element={<Authors/>} />
@@ -57,7 +50,6 @@ function App() {
             </div>
           </div>
         </div>
-        <Footer/>
       </Router>
     </div>
   );
