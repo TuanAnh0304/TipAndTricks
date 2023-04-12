@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../../../Services/BlogRepository';
 import Loading from '../../../Components/Loading';
-import PostFilterPane from '../../Components/Admin/PostFilterPane'; 
+import PostFilterPane from '../../../Components/Admin/PostFilterPane'; 
 
 
 const Posts = () => {
