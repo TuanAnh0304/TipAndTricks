@@ -46,12 +46,12 @@ const PostFilterPane = () => {
     </Form.Label>
 <Form.Select name='authorId'
     value={postFilter.authorId}
-    onChange={e => dispatch (updateAuthorId(e.target.value))}
+    onChange={e => dispatch(updateAuthorId(e.target.value))}
     title='Author Id'
  >
     <option value=''>-- Chọn tác giả --</option>
-    {postFilter.authorList.length > 0 &&
-        postFilter.authorList.map((item, index) =>
+    {filter.authorList.length > 0 &&
+        filter.authorList.map((item, index) =>
             <option key={index} value={item.value}>{item.text}</option>
         )}
 </Form.Select>
