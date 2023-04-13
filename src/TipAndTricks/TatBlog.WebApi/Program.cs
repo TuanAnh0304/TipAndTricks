@@ -20,6 +20,7 @@ var app = builder.Build();
 
     app.MapAuthorEndpoints();
     app.MapCategoryEndpoints();
+    app.MapPostEndpoints();
 
     app.Run();
 }

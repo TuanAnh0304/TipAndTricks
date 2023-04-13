@@ -20,7 +20,7 @@ namespace TatBlog.WebApi.Endpoints
 
             routeGroupBuilder.MapGet("/", GetPosts)
                          .WithName("GetPosts")
-                         .Produces<PaginationResult<PostItem>>();
+                         .Produces<ApiResponse<PaginationResult<PostDto>>>();
 
             routeGroupBuilder.MapGet("/get-posts-filter", GetFilteredPosts)
             .WithName("GetFilteredPost")
@@ -41,15 +41,16 @@ namespace TatBlog.WebApi.Endpoints
         }
         private static async Task<IResult> GetPosts(
             [AsParameters] PostFilterModel model, 
+            [AsParameters] PagingModel pagingModel,
             IBlogRepository blogRepository, 
             IMapper mapper)
         {
             var postQuery = mapper.Map<PostQuery>(model);
-            var postList = await blogRepository.GetPostByQueryAsync(postQuery, model, post => post.ProjectToType<PostItem>());
+            var postList = await blogRepository.GetPostByQueryAsync(postQuery, pagingModel, post => post.ProjectToType<PostDto>());
 
-            var paginationResult = new PaginationResult<PostItem>(postList);
+            var paginationResult = new PaginationResult<PostDto>(postList);
 
-            return Results.Ok(paginationResult);
+           return Results.Ok(ApiResponse.Success(paginationResult));
         }
         private static async Task<IResult> GetFilter(
             IAuthorRepository authorRepository,
